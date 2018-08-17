@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Extra styling and stuff by: James Xu (so blame me if anything goes wrong)
+-->
+<html>
+	<head>
+		<title>Home - CodeReach</title>
+		<meta charset="utf-8" />
+		<meta property = "og:iamge" content="images/logowithstroke.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86188538-4"></script>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-86188538-4');
+</script>
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+			var date = "4:15 to 5:30";
+			var day = "Every Thursday";
+			var counter = 0;
+			var array = [day,date];
+			var normal = "Every Thursday | 4:15 - 5:30";
+
+			setInterval(function() {
+				if ($(window).width() < 400) {
+					$("#date-time").text(array[counter%2]);
+					counter += 1;
+				} else {
+					$("#date-time").text(normal);
+				}
+			}, 1300);
+
+		</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="assets/js/custom.js"></script>
+	</head>
+	<style>
+	@media screen and (max-width: 768px) {
+		.logo {
+			width: 80vw;
+			height: auto;
+		}
+		.logo2 {
+			height: 2.7em;
+			width: auto;
+		}
+	}
+	@media screen and (min-width: 767px) {
+		.logo {
+			width: 30vw;
+			height: auto;
+		}
+		.logo2 {
+			height: 3em;
+			width: auto;
+		}
+	}
+	.hidden {
+	display: none;
+	}
+	</style>
+	<body class="landing is-preload">
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<img id="logo2" src="images/logowithstroke.png" class="logo2 hidden" />
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About Us</a></li>
+											<li><a href="form.html">Sign Up</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner" style="background: rgba(0,0,0,0.5);">
+						<div class="inner">
+							<img class="logo" src="images/logowithstroke.png" />
+							<h4>Vincent Massey Secondary School</h4>
+							<h4>1800 Liberty St.</h4>
+							<h4>Teaching the Fundamentals of Computer Science</h4>
+							<h4>Starting September 2018</h4>
+							<h4 id="date-time">Every Thursday | 4:15 - 5:30</h4>
+							<ul class="actions special">
+								<li><a href="form.html" class="button primary">SIGNUP</a></li>
+							</ul>
+						</div>
+						<a href="#one" class="more scrolly">Learn More</a>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>We Are A Vincent Massey organization that teaches<br />
+								Grade 7 and 8 students the basics of computer science</h2>
+								<p>CodeReach helps create the foundation of computer science for students to prepare them for more complicated computer science classes in the future.</p>
+							</header>
+						</div>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
+								<h2>Our
+								Goal</h2>
+								<p>In an ever growing technology-driven world, we strive to prepare young minds in our community for what the future holds. Programming is a sought-after skill that, unfortunately, is not taught in elementary school. We hope that through programming, our students will be proactive when using computers and hopefully reach a point where they can whatever they want.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
+								<h2>What we teach</h2>
+								<p>We teach Python because its simple to learn and is one of the most popular programming languages in the world. Further into the course, we introduce students to basic graphics using the module, Pygame. Students will have the opportunity to learn how to create their own simple games.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/cr_text.jpg" alt="" /></div><div class="content">
+								<h2>Who teaches</h2>
+								<p>At CodeReach, our instructors are highly qualified highschool students. All instructors must finish their computer science and math course with over a 95%. We hope that through a peer to peer setting, classrooms can become more dynamic and less intimidating!</p>
+								<a href="about.html" class="button fit">Learn More</a>
+
+							</div>
+						</section>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Frequently Asked Questions</h2>
+								<p>If the section below doesn't answer your question, feel free to use the contact form below.</p>
+							</header>
+							<section>
+								<hr />
+								<h4>How much does CodeReach cost?</h4>
+								<p>CodeReach is <b>free</b>. We believe that open access to education is extremely important, so we will <b>never</b> charge for CodeReach.</p>
+								<h4>What should I bring to class?</h4>
+								<p>We provide computer labs, so you do not have to bring your own computer. That being said we <b>highly recommend you bring your own laptop</b> so you can continue on what you learned in class at home! If you have any medical issues, allergies or otherwise require accommodation, please let us know! We also suggest you bring water in a bottle so you don't get thirsty.</p>
+								<div class="">
+								<h4>How do I apply?</h4>
+								<p>Due to limited number of seats, we offer CodeReach at a first come first serve basis. To apply click the “signup” button at the start of the page. You can’t miss it we promise!</p>
+								<h4>When are applications due? How will I know if I got accepted?</h4>
+								<p>Information will be released soon.</p>
+								<p style="display: none;">Applications are due by <b>September 10th, 2018</b>. We will send out an email to all accepted students by <b>September 15th, 2018</b>.</p>
+								</div>		
+							</section>
+							<div>
+								<hr />
+								<h4>Contact Us</h4>
+								<form method="post" action="#">
+									<div class="row gtr-uniform">
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+										</div>
+										<div class="col-12">
+											<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" value="Send Message" class="primary" /></li>
+												<li><input type="reset" value="Reset" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Applications Open Now!</h2>
+								<p>Accepting Grade 7-8 students.</p>
+							</header>
+							<ul class="actions stacked">
+								<li><a href="form.html" class="button fit primary">Signup</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://twitter.com/codereach" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/VMSSCodeReach/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.instagram.com/codereach.vmss/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="mailto:hello@codereach.ca" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; James Xu</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
