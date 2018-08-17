@@ -3593,9 +3593,10 @@ input, select, textarea {
 			font-size: 0.8em;
 			height: 8.5em;
 			left: 50%;
+			transform: translateX(-50%);
 			letter-spacing: 0.225em;
-			margin-left: -8.5em;
-			opacity: 1;
+/*			margin-left: -8.5em;
+*/			opacity: 1;
 			outline: 0;
 			padding-left: 0.225em;
 			position: absolute;
