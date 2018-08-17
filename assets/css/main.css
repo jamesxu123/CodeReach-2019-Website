@@ -3579,10 +3579,10 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.25s ease, opacity 0.25s ease;
 			-ms-transition: -ms-transform 0.25s ease, opacity 0.25s ease;
 			transition: transform 0.25s ease, opacity 0.25s ease;
-			-moz-transition-delay: 2.75s;
-			-webkit-transition-delay: 2.75s;
-			-ms-transition-delay: 2.75s;
-			transition-delay: 2.75s;
+			-moz-transition-delay: 2s;
+			-webkit-transition-delay: 2s;
+			-ms-transition-delay: 2s;
+			transition-delay: 2s;
 			-moz-transform: translateY(0);
 			-webkit-transform: translateY(0);
 			-ms-transform: translateY(0);
