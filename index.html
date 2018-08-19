@@ -12,39 +12,11 @@
 		<meta charset="utf-8" />
 		<meta property = "og:iamge" content="images/logowithstroke.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86188538-4"></script>
-		<script src='https://www.google.com/recaptcha/api.js'></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-86188538-4');
-</script>
 
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script async src="assets/js/custom.js"></script>
+		<script async src="assets/js/jquery.min.js"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script>
-			var date = "4:15 to 5:30";
-			var day = "Every Thursday";
-			var counter = 0;
-			var array = [day,date];
-			var normal = "Every Thursday | 4:15 - 5:30";
-
-			setInterval(function() {
-				if ($(window).width() < 400) {
-					$("#date-time").text(array[counter%2]);
-					counter += 1;
-				} else {
-					$("#date-time").text(normal);
-				}
-			}, 1300);
-
-		</script>
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		<script src="assets/js/custom.js"></script>
 	</head>
 	<style>
 	@media screen and (max-width: 768px) {
@@ -228,6 +200,33 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86188538-4"></script>
+			<script async src='https://www.google.com/recaptcha/api.js'></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
 
+			  gtag('config', 'UA-86188538-4');
+			</script>
+			<script>
+				var date = "4:15 to 5:30";
+				var day = "Every Thursday";
+				var counter = 0;
+				var array = [day,date];
+				var normal = "Every Thursday | 4:15 - 5:30";
+
+				setInterval(function() {
+					if ($(window).width() < 400) {
+						$("#date-time").text(array[counter%2]);
+						counter += 1;
+					} else {
+						$("#date-time").text(normal);
+					}
+				}, 1300);
+
+			</script>
+			<script async src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	</body>
 </html>
