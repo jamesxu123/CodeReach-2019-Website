@@ -23,7 +23,7 @@ In short, Spectral's the culmination of several new things I'm working on/trying
 so please, let me know what you think :)
 
 Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+you can use for pretty much whatever
 
 (* = not included)
 
