@@ -1,9 +1,0 @@
-[02-Oct-2018 21:04:23 UTC] PHP Warning:  require(./config.php): failed to open stream: No such file or directory in /home/davidhui/davidhui.ca/dev/codereach/includes/commonutil.php on line 45
-[02-Oct-2018 21:04:23 UTC] PHP Warning:  require(./config.php): failed to open stream: No such file or directory in /home/davidhui/davidhui.ca/dev/codereach/includes/commonutil.php on line 45
-[02-Oct-2018 21:04:23 UTC] PHP Fatal error:  require(): Failed opening required './config.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/davidhui/davidhui.ca/dev/codereach/includes/commonutil.php on line 45
-[02-Oct-2018 21:05:15 UTC] PHP Warning:  require(./config.php): failed to open stream: No such file or directory in /home/davidhui/davidhui.ca/dev/codereach/includes/commonutil.php on line 45
-[02-Oct-2018 21:05:15 UTC] PHP Warning:  require(./config.php): failed to open stream: No such file or directory in /home/davidhui/davidhui.ca/dev/codereach/includes/commonutil.php on line 45
-[02-Oct-2018 21:05:15 UTC] PHP Fatal error:  require(): Failed opening required './config.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/davidhui/davidhui.ca/dev/codereach/includes/commonutil.php on line 45
-[02-Oct-2018 21:07:15 UTC] PHP Warning:  require(./config.php): failed to open stream: No such file or directory in /home/davidhui/davidhui.ca/dev/codereach/includes/commonutil.php on line 3
-[02-Oct-2018 21:07:15 UTC] PHP Warning:  require(./config.php): failed to open stream: No such file or directory in /home/davidhui/davidhui.ca/dev/codereach/includes/commonutil.php on line 3
-[02-Oct-2018 21:07:15 UTC] PHP Fatal error:  require(): Failed opening required './config.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/davidhui/davidhui.ca/dev/codereach/includes/commonutil.php on line 3
