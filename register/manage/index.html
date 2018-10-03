@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodeReach Registration</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css'>
+
+      <link rel="stylesheet" href="buttons.css">
+  <style>
+      html,
+        body {
+          display: flex;
+          height: 100%;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .card.is-wide {
+          width: 550px;
+        }
+        
+        .card.has-text-centered .card-header,
+        .card.has-text-centered .card-content,
+        .card.has-text-centered .card-footer {
+          justify-content: center;
+          align-items: center;
+        }
+        .card.has-text-centered h1 {
+          font-size: 1.75rem;
+          font-weight: bold;
+        }
+        
+        .card-header {
+          padding: 1.75rem 0;
+        }
+        
+        .card-content {
+          padding: 3.5rem 0;
+        }
+        
+        .card-footer {
+          padding: 1rem 0;
+          border: none;
+          font-size: .9rem;
+          color: gray;
+        }
+
+  </style>
+</head>
+
+<body>
+
+  <main role="main">
+  <div class="card has-text-centered is-wide" id="main">
+    <div class="card-content">
+      <h1>
+        Hello there!
+      </h1>
+      <p style="padding-top:1.5em;">
+        Thank you for expressing interest in CodeReach. Click the button to get started!</p>
+        <p style="padding-top:4em;">
+        <a href="form" id="startreg" class="button button-flat-action" style="height:50px;line-height:51px;padding:0px 50.6px;font-size:23px;">Let's Go!</a>
+      </p>
+    </div>
+    <footer class="card-footer">
+      <a href="dash">Staff Login</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&copy; 2018 CodeReach
+    </footer>
+  </div>
+  <div class="card has-text-centered is-wide" id="toggle" hidden>
+      <div class="card-content">
+          The system will redirect you in a momment...
+      </div>
+    <footer class="card-footer">
+      <a href="dash">Staff Login</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&copy; 2018 CodeReach
+    </footer>
+  </div>
+</main>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+ <script>
+     $('#startreg').click(function() {
+       $("#toggle").toggle("drop", {direction: "down"});
+    	$("#main").toggle("fade");
+    });
+
+
+ </script>
+</body>
+
+</html>

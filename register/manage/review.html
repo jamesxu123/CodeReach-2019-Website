@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title>CodeReach Application Review</title>
+    </head>
+    <body>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Grade</th>
+              <th scope="col">School</th>
+            </tr>
+          </thead>
+          <tbody id="applicationtable">
+            
+          </tbody>
+        </table>
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+        <script>
+             $.ajax({
+                type: "POST",
+                url: "https://dev.davidhui.ca/codereach/api.php",
+                // The key needs to match your method's input parameter (case-sensitive).
+                data: JSON.stringify({ token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwaXJ5IjoxNTM4NTEwMjU1LCJpc3N1ZWQiOjE1Mzg0MjM4NTUsInVzZXJuYW1lIjoiZGF2aWQiLCJuYW1lIjoiRGF2aWQgSHVpIiwiZW1haWwiOiJkYXZpZGh1aUBkYXZlc29mdGxsYy5jb20iLCJyb2xlIjowfQ.xEQvlY_X76Sc87eDzCbFUahroKewNQ8Httxj2HTXue0", action: "allapplications"}),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(data){
+                    console.log(data.applications);
+                    
+                    for(application of data.applications){
+                        let domString = '<tr><th scope="row">' + application.id +'</th><td>' + application.fullname + '</td><td>' + application.grade + '</td><td>' + application.currentschool + '</tr>';
+                        $("#applicationtable").append(domString);
+                    }
+                },
+                failure: function(errMsg) {
+                    alert(errMsg);
+                }
+            });
+
+        </script>
+    </body>
+</html>
