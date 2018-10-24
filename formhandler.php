@@ -16,6 +16,7 @@ $usermessage = $_POST['message'];
 
 $email = new \SendGrid\Mail\Mail(); 
 $email->setFrom("form@codereach.ca", "Form Response");
+$email->setReplyTo($email_addr);
 $email->setSubject("Message From " . $firstname);
 $email->addTo("hello@codereach.ca", "CodeReach");
 $email->addTo("admin@codereach.ca", "CodeReach Admin");
