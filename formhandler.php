@@ -14,6 +14,20 @@ $firstname = $_POST['name'];
 $email_addr = $_POST['email'];
 $usermessage = $_POST['message'];
 
+$slackmsg = array(
+    'text' => "Name: " . $firstname . "\nEmail: " . $email_addr . "\nMessage: " . $usermessage
+);
+
+$URL = 'https://hooks.slack.com/services/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';
+
+$ch = curl_init($URL);
+
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($slackmsg, '', '&'));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
+
 $email = new \SendGrid\Mail\Mail(); 
 $email->setFrom("form@codereach.ca", "Form Response");
 $email->setReplyTo($email_addr);
