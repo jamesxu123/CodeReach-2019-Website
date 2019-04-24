@@ -24,7 +24,7 @@ services:
       - "traefik.enable=true"
     networks:
       - traefik
-      image: "${CI_REGISTRY}/${CI_PROJECT_PATH}/nginx:latest"
+    image: "${CI_REGISTRY}/${CI_PROJECT_PATH}/nginx:latest"
   codereach_php:
     build:
       context: .
