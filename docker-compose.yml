@@ -1,13 +1,16 @@
-web:
-  image: nginx:latest
-  ports:
-    - "9001:80"
-  volumes:
-    - ./webroot:/webroot
-    - ./site.conf:/etc/nginx/conf.d/default.conf
-  links:
-    - php
-php:
-  image: php:7-fpm
-  volumes:
-    - ./webroot:/webroot
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "9001:80"
+    volumes:
+      - ./webroot:/webroot
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php
+    labels:
+      - "traefik.docker.network: codereach.ca"
+  php:
+    image: php:7-fpm
+    volumes:
+      - ./webroot:/webroot
