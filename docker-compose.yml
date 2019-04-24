@@ -11,8 +11,7 @@ services:
       - 8080:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /root/traefik.toml:/traefik.toml
-      - /root/acme.json:/acme.json
+      - /etc/traefik/traefik.toml:/traefik.toml
   web:
     image: nginx:latest
     ports:
