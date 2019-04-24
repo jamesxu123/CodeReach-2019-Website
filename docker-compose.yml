@@ -1,5 +1,18 @@
 version: "3"
 services:
+  proxy:
+    image: traefik:latest
+    command: --web --docker --docker.domain=codereach.local --logLevel=DEBUG
+    networks:
+      - traefik
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/traefik.toml:/traefik.toml
+      - /root/acme.json:/acme.json
   web:
     image: nginx:latest
     ports:
