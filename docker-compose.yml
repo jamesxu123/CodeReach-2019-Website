@@ -12,26 +12,26 @@ services:
   #    volumes:
   #      - /var/run/docker.sock:/var/run/docker.sock
   #      - /etc/traefik/traefik.toml:/traefik.toml
-  web:
-    image: nginx:latest
+  codereach_nginx:
+    build: ./
     ports:
       - "9001:80"
-    volumes:
-      - ./webroot:/webroot
-      - ./site.conf:/etc/nginx/conf.d/default.conf
     links:
-      - php
+      - codereach_php
     labels:
       - "traefik.docker.network: traefik"
       - "traefik.frontend.rule=Host:codereach.ca"
+      - "traefik.enable=true"
     networks:
       - traefik
-  php:
-    image: php:7-fpm
-    volumes:
-      - ./webroot:/webroot
+  #    image: "${CI_REGISTRY}/${CI_PROJECT_PATH}/nginx:latest"
+  codereach_php:
+    build:
+      context: .
+      dockerfile: php/Dockerfile
     networks:
       - traefik
+#    image: "${CI_REGISTRY}/${CI_PROJECT_PATH}/php:latest"
 networks:
   traefik:
     external: true
