@@ -14,8 +14,8 @@ services:
   #      - /etc/traefik/traefik.toml:/traefik.toml
   codereach_nginx:
     build: ./
-    ports:
-      - "9001:80"
+    #    ports:
+    #      - "9001:80"
     links:
       - codereach_php
     labels:
