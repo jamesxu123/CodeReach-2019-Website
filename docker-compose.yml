@@ -1,4 +1,5 @@
-version: "3.3"
+version: "3"
+
 services:
   web:
     image: nginx:latest
@@ -10,7 +11,8 @@ services:
     links:
       - php
     labels:
-      - "traefik.docker.network: codereach.ca"
+      - "traefik.docker.network: traefik"
+      - "traefik.frontend.rule=Host:codereach.ca"
   php:
     image: php:7-fpm
     volumes:
