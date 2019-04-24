@@ -1,6 +1,6 @@
 version: "3"
 networks:
-  web:
+  traefik:
     external: true
   internal:
     external: false
@@ -18,7 +18,7 @@ services:
       - "traefik.docker.network: traefik"
       - "traefik.frontend.rule=Host:codereach.ca"
     networks:
-      - web
+      - traefik
   php:
     image: php:7-fpm
     volumes:
