@@ -32,6 +32,8 @@ services:
     networks:
       - traefik
     image: "${CI_REGISTRY}/${CI_PROJECT_PATH}/php:latest"
+    environment:
+      - SENDGRID_API_KEY=${SG_API_KEY}
 networks:
   traefik:
     external: true
