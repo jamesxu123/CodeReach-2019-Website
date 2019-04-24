@@ -14,7 +14,8 @@ build:
     - "docker info"
   script:
     - "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY"
-    - "docker build -t ${CI_REGISTRY}/${CI_PROJECT_PATH}:latest --pull ."
+    - "docker build -t ${CI_REGISTRY}/${CI_PROJECT_PATH}/nginx:latest --pull ."
+    - "docker build -t ${CI_REGISTRY}/${CI_PROJECT_PATH}/php:latest --pull -f ./php/Dockerfile ."
     - "docker push ${CI_REGISTRY}/${CI_PROJECT_PATH}:latest"
   after_script:
     - "docker logout ${CI_REGISTRY}"
@@ -35,6 +36,6 @@ deploy:
     - ssh-keyscan -H $DEPLOYMENT_SERVER_IP >> ~/.ssh/known_hosts
   script:
     - scp -r ./docker-compose.yml dockerdeploy@${DEPLOYMENT_SERVER_IP}:~/
-    - ssh dockerdeploy@$DEPLOYMENT_SERVER_IP "mkdir ~/php"
+    #    - ssh dockerdeploy@$DEPLOYMENT_SERVER_IP "mkdir ~/php"
     - scp ./php/Dockerfile dockerdeploy@${DEPLOYMENT_SERVER_IP}:~/php/
-    - ssh dockerdeploy@$DEPLOYMENT_SERVER_IP "export CI_REGISTRY=${CI_REGISTRY}; export CI_PROJECT_PATH=${CI_PROJECT_PATH}; docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}; docker-compose -f docker-compose.yml stop; docker pull ${CI_REGISTRY}/${CI_PROJECT_PATH}:latest; docker-compose -f docker-compose.yml up -d"
+    - ssh dockerdeploy@$DEPLOYMENT_SERVER_IP "export CI_REGISTRY=${CI_REGISTRY}; export CI_PROJECT_PATH=${CI_PROJECT_PATH}; docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}; docker-compose -f docker-compose.yml stop; docker-compose -f docker-compose.yml rm codereach_nginx; docker-compose -f docker-compose.yml rm codereach_php; docker pull ${CI_REGISTRY}/${CI_PROJECT_PATH}:latest; docker-compose -f docker-compose.yml up -d"
