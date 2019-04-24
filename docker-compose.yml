@@ -13,7 +13,7 @@ services:
   #      - /var/run/docker.sock:/var/run/docker.sock
   #      - /etc/traefik/traefik.toml:/traefik.toml
   codereach_nginx:
-    build: ./
+    #    build: ./
     ports:
       - "9001:80"
     links:
@@ -26,9 +26,9 @@ services:
       - traefik
     image: "${CI_REGISTRY}/${CI_PROJECT_PATH}/nginx:latest"
   codereach_php:
-    build:
-      context: .
-      dockerfile: php/Dockerfile
+    #    build:
+    #      context: .
+    #      dockerfile: php/Dockerfile
     networks:
       - traefik
     image: "${CI_REGISTRY}/${CI_PROJECT_PATH}/php:latest"
