@@ -29,6 +29,7 @@ services:
       driver: "fluentd"
       options:
         tag: website.{{.ImageName}}/{{.ID}}
+    restart: always
   codereach_php:
     build:
       context: .
@@ -42,6 +43,7 @@ services:
       driver: "fluentd"
       options:
         tag: website.{{.ImageName}}/{{.ID}}
+    restart: always
 networks:
   traefik:
     external: true
