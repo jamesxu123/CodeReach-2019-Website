@@ -25,6 +25,10 @@ services:
     networks:
       - traefik
     image: "${CI_REGISTRY}/${CI_PROJECT_PATH}/nginx:latest"
+    logging:
+      driver: "fluentd"
+      options:
+        tag: website.{{.ImageName}}/{{.ID}}
   codereach_php:
     build:
       context: .
@@ -34,6 +38,10 @@ services:
     image: "${CI_REGISTRY}/${CI_PROJECT_PATH}/php:latest"
     environment:
       - SENDGRID_API_KEY=${SG_API_KEY}
+    logging:
+      driver: "fluentd"
+      options:
+        tag: website.{{.ImageName}}/{{.ID}}
 networks:
   traefik:
     external: true
