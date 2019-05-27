@@ -37,7 +37,7 @@ deploy:
     - ssh-keyscan -H $DEPLOYMENT_SERVER_IP >> ~/.ssh/known_hosts
   script:
     - ssh dockerdeploy@$DEPLOYMENT_SERVER_IP "mkdir ~/php"
-    - scp -r ./docker-compose.${CI_PROJECT_NAME}.yml dockerdeploy@${DEPLOYMENT_SERVER_IP}:~/docker-compose.${CI_PROJECT_NAME}.yml
+    - scp -r ./docker-compose.yml dockerdeploy@${DEPLOYMENT_SERVER_IP}:~/docker-compose.${CI_PROJECT_NAME}.yml
     #    - ssh dockerdeploy@$DEPLOYMENT_SERVER_IP "mkdir ~/php"
     - scp ./php/Dockerfile dockerdeploy@${DEPLOYMENT_SERVER_IP}:~/php/
     - ssh dockerdeploy@$DEPLOYMENT_SERVER_IP "export SG_API_KEY=${SG_API_KEY}; export CI_REGISTRY=${CI_REGISTRY}; export CI_PROJECT_PATH=${CI_PROJECT_PATH}; docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}; docker-compose -f docker-compose.${CI_PROJECT_NAME}.yml stop; docker-compose -f docker-compose.${CI_PROJECT_NAME}.yml rm codereach_nginx; docker-compose -f docker-compose.${CI_PROJECT_NAME}.yml rm codereach_php; docker pull ${CI_REGISTRY}/${CI_PROJECT_PATH}/nginx:latest; docker pull ${CI_REGISTRY}/${CI_PROJECT_PATH}/php:latest; SENDGRID_API_KEY=${SG_API_KEY} docker-compose -f docker-compose.${CI_PROJECT_NAME}.yml up -d"
