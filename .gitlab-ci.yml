@@ -36,6 +36,7 @@ deploy:
     - ssh-add ~/.ssh/id_rsa
     - ssh-keyscan -H $DEPLOYMENT_SERVER_IP >> ~/.ssh/known_hosts
   script:
+    - ssh dockerdeploy@$DEPLOYMENT_SERVER_IP "mkdir ~/php"
     - scp -r ./docker-compose.yml dockerdeploy@${DEPLOYMENT_SERVER_IP}:~/
     #    - ssh dockerdeploy@$DEPLOYMENT_SERVER_IP "mkdir ~/php"
     - scp ./php/Dockerfile dockerdeploy@${DEPLOYMENT_SERVER_IP}:~/php/
