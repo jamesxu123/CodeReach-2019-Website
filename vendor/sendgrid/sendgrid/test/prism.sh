@@ -1,10 +1,5 @@
 #!/bin/bash
 
-get_latest_release() {
-  curl --silent "https://api.github.com/repos/stoplightio/prism/releases/latest" | # Get latest release from GitHub api
-    grep '"tag_name":' |                                            # Get tag line
-    sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
-}
 set -eu
 
 install () {
@@ -33,24 +28,24 @@ elif [ "$UNAME" = "Linux" ] ; then
 fi
 
 mkdir -p ../prism/bin
-LATEST=$(get_latest_release)
-# URL="https://github.com/stoplightio/prism/releases/download/$LATEST/prism_$PLATFORM"
-URL="https://github.com/stoplightio/prism/releases/download/v2.0.17/prism_$PLATFORM"
+#LATEST=$(curl -s https://api.github.com/repos/stoplightio/prism/tags | grep -Eo '"name":.*?[^\\]",'  | head -n 1 | sed 's/[," ]//g' | cut -d ':' -f 2)
+LATEST="v0.6.21"
+URL="https://github.com/stoplightio/prism/releases/download/$LATEST/prism_$PLATFORM"
 DEST=../prism/bin/prism
 
-# if [ -z $LATEST ] ; then
-#   echo "Error requesting. Download binary from ${URL}"
-#   exit 1
-# else
-curl -L $URL -o $DEST
-chmod +x $DEST
-# fi
+if [ -z $LATEST ] ; then
+  echo "Error requesting. Download binary from ${URL}"
+  exit 1
+else
+  curl -L $URL -o $DEST
+  chmod +x $DEST
+fi
 }
 
 run () {
   echo "Running prism..."
   cd ../prism/bin
-  ./prism mock --spec https://raw.githubusercontent.com/sendgrid/sendgrid-oai/master/oai_stoplight.json
+  ./prism run --mock --spec https://raw.githubusercontent.com/sendgrid/sendgrid-oai/master/oai_stoplight.json
 }
 
 if [ -f ../prism/bin/prism ]; then
